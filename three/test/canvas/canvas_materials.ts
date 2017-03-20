@@ -127,7 +127,7 @@
 
         container.appendChild(debugCanvas);
 
-        var debugContext = debugCanvas.getContext('2d');
+        var debugContext = debugCanvas.getContext('2d')!;
         debugContext.setTransform(1, 0, 0, 1, 256, 256);
         debugContext.strokeStyle = '#000000';
 

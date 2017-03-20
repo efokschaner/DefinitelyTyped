@@ -178,7 +178,7 @@
 
     function init() {
 
-        var container = document.getElementById('container');
+        var container = document.getElementById('container')!;
 
         scene = new THREE.Scene();
 

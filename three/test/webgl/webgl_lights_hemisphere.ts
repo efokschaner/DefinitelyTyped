@@ -18,7 +18,7 @@
 
     function init() {
 
-        var container = document.getElementById( 'container' );
+        var container = document.getElementById( 'container' )!;
 
         camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 5000 );
         camera.position.set( 0, 0, 250 );
@@ -89,8 +89,8 @@
 
         // SKYDOME
 
-        var vertexShader = document.getElementById( 'vertexShader' ).textContent;
-        var fragmentShader = document.getElementById( 'fragmentShader' ).textContent;
+        var vertexShader = document.getElementById( 'vertexShader' )!.textContent;
+        var fragmentShader = document.getElementById( 'fragmentShader' )!.textContent;
         var uniforms = {
             topColor: 	 { value: new THREE.Color( 0x0077ff ) },
             bottomColor: { value: new THREE.Color( 0xffffff ) },
@@ -102,7 +102,12 @@
         scene.fog.color.copy( uniforms.bottomColor.value );
 
         var skyGeo = new THREE.SphereGeometry( 4000, 32, 15 );
-        var skyMat = new THREE.ShaderMaterial( { vertexShader: vertexShader, fragmentShader: fragmentShader, uniforms: uniforms, side: THREE.BackSide } );
+        var skyMat = new THREE.ShaderMaterial( {
+            vertexShader: vertexShader ? vertexShader : undefined,
+            fragmentShader: fragmentShader ? fragmentShader : undefined,
+            uniforms: uniforms,
+            side: THREE.BackSide
+        });
 
         var sky = new THREE.Mesh( skyGeo, skyMat );
         scene.add( sky );

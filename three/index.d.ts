@@ -1721,11 +1721,11 @@ declare namespace THREE {
     }
 
     export interface RaycasterParameters {
-        Mesh?: any;
-        Line?: any;
-        LOD?: any;
-        Points?: { threshold: number };
-        Sprite?: any;
+        Mesh: any;
+        Line: any;
+        LOD: any;
+        Points: { threshold: number };
+        Sprite: any;
     }
 
     export class Raycaster {

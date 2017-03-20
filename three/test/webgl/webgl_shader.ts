@@ -14,7 +14,7 @@
 
     function init() {
 
-        container = document.getElementById('container');
+        container = document.getElementById('container')!;
 
         camera = new THREE.Camera();
         camera.position.z = 1;
@@ -28,12 +28,13 @@
             resolution: { type: "v2", value: new THREE.Vector2() }
         };
 
+        let vertexShader = document.getElementById('vertexShader')!.textContent;
+        let fragmentShader = document.getElementById('fragmentShader')!.textContent;
+
         var material = new THREE.ShaderMaterial({
-
             uniforms: uniforms,
-            vertexShader: document.getElementById('vertexShader').textContent,
-            fragmentShader: document.getElementById('fragmentShader').textContent
-
+            vertexShader: vertexShader ? vertexShader : undefined,
+            fragmentShader: fragmentShader ? fragmentShader : undefined
         });
 
         var mesh = new THREE.Mesh(geometry, material);

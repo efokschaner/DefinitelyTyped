@@ -12,7 +12,7 @@
 
     function init() {
 
-        var container = document.getElementById('container');
+        var container = document.getElementById('container')!;
 
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
         camera.position.set(0, - 6, 100);

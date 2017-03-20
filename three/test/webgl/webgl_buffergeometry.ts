@@ -19,7 +19,7 @@ var container: HTMLElement;
 
     function init() {
 
-        container = document.getElementById( 'container' );
+        container = document.getElementById( 'container' )!;
 
         //
 

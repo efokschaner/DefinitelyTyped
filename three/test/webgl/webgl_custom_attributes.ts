@@ -29,14 +29,13 @@
 
         uniforms.texture.value.wrapS = uniforms.texture.value.wrapT = THREE.RepeatWrapping;
 
+        let vertexShader = document.getElementById('vertexshader')!.textContent;
+        let fragmentShader = document.getElementById('fragmentshader')!.textContent;
         var shaderMaterial = new THREE.ShaderMaterial({
-
             uniforms: uniforms,
-            vertexShader: document.getElementById('vertexshader').textContent,
-            fragmentShader: document.getElementById('fragmentshader').textContent
-
+            vertexShader: vertexShader ? vertexShader : undefined,
+            fragmentShader: fragmentShader ? fragmentShader : undefined
         });
-
 
         var radius = 50, segments = 128, rings = 64;
 
@@ -61,7 +60,7 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        var container = document.getElementById('container');
+        var container = document.getElementById('container')!;
         container.appendChild(renderer.domElement);
 
         stats = new Stats();

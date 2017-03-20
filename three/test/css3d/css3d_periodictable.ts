@@ -256,7 +256,7 @@
         renderer = new THREE.CSS3DRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.domElement.style.position = 'absolute';
-        document.getElementById('container').appendChild(renderer.domElement);
+        document.getElementById('container')!.appendChild(renderer.domElement);
 
         //
 
@@ -266,28 +266,28 @@
         controls.maxDistance = 6000;
         controls.addEventListener('change', render);
 
-        var button = document.getElementById('table');
+        var button = document.getElementById('table')!;
         button.addEventListener('click', function (event: MouseEvent) {
 
             transform(targets.table, 2000);
 
         }, false);
 
-        var button = document.getElementById('sphere');
+        var button = document.getElementById('sphere')!;
         button.addEventListener('click', function (event: MouseEvent) {
 
             transform(targets.sphere, 2000);
 
         }, false);
 
-        var button = document.getElementById('helix');
+        var button = document.getElementById('helix')!;
         button.addEventListener('click', function (event: MouseEvent) {
 
             transform(targets.helix, 2000);
 
         }, false);
 
-        var button = document.getElementById('grid');
+        var button = document.getElementById('grid')!;
         button.addEventListener('click', function (event: MouseEvent) {
 
             transform(targets.grid, 2000);

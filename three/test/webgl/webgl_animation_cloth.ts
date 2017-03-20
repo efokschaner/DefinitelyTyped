@@ -113,8 +113,8 @@
         clothGeometry.computeFaceNormals();
 
         var uniforms = { texture: { value: clothTexture } };
-        var vertexShader = document.getElementById('vertexShaderDepth').textContent;
-        var fragmentShader = document.getElementById('fragmentShaderDepth').textContent;
+        var vertexShader = document.getElementById('vertexShaderDepth')!.textContent;
+        var fragmentShader = document.getElementById('fragmentShaderDepth')!.textContent;
 
         // cloth mesh
 
